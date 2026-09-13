@@ -9,6 +9,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { toast } from 'sonner';
 import { trpc } from '@/lib/trpc';
 import { useAuth } from '@/_core/hooks/useAuth';
+import { getLoginUrl } from '@/const';
 
 export default function Home() {
   const [, navigate] = useLocation();
@@ -72,7 +73,7 @@ export default function Home() {
           <p className="text-gray-400 text-lg max-w-md">
             Create stunning iOS-style lockscreen videos with cinematic animations
           </p>
-          <Button size="lg" onClick={() => navigate('/login')}>
+          <Button size="lg" onClick={() => { window.location.href = getLoginUrl(); }}>
             Sign In to Get Started
           </Button>
         </div>
